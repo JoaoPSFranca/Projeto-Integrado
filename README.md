@@ -6,3 +6,6 @@ Atualizar caso de Uso ☑️
 Fazer Diagrama de Atividade ☑️  
 Fazer Especificação de caso de uso ☑️  
 Atualizar ERS   
+Diagrama de Classe  
+Diagrama de Sequencia  
+Arquitetura modelo-lógico
