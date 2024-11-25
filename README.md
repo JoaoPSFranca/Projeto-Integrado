@@ -5,7 +5,7 @@ Metas:
 Atualizar caso de Uso ☑️  
 Fazer Diagrama de Atividade ☑️  
 Fazer Especificação de caso de uso ☑️  
-Atualizar ERS   
-Diagrama de Classe  
-Diagrama de Sequencia  
-Arquitetura modelo-lógico
+Atualizar ERS - em curso  
+Diagrama de Classe  - em curso  
+Diagrama de Sequencia  - em curso  
+Arquitetura modelo-lógico  
