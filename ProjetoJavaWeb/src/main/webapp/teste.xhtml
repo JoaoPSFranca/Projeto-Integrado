@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Página Principal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="resources/css/teste.css" />
+    </h:head>
+
+    <h:body>
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h:outputText value="Logo/Marca" styleClass="logo" />
+            <p:commandButton value="Perfil" icon="pi pi-user" styleClass="perfil-btn" />
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="container">
+            <!-- Lanches -->
+            <h2>Lanches</h2>
+            <p:panelGrid columns="1" styleClass="product-grid">
+                <ui:repeat value="#{produtoBean.lanches}" var="lanche">
+                    <div class="produto">
+                        <h3>#{lanche.nome}</h3>
+                        <p>#{lanche.descricao}</p>
+                        <span>R$ #{lanche.preco}</span>
+                        <p:spinner value="#{lanche.quantidade}" size="2" min="0" max="99" />
+                    </div>
+                </ui:repeat>
+            </p:panelGrid>
+
+            <!-- Bebidas -->
+            <h2>Bebidas</h2>
+            <p:panelGrid columns="1" styleClass="product-grid">
+                <ui:repeat value="#{produtoBean.bebidas}" var="bebida">
+                    <div class="produto">
+                        <h3>#{bebida.nome}</h3>
+                        <p>#{bebida.descricao}</p>
+                        <span>R$ #{bebida.preco}</span>
+                        <p:spinner value="#{bebida.quantidade}" size="2" min="0" max="99" />
+                    </div>
+                </ui:repeat>
+            </p:panelGrid>
+
+            <!-- Acompanhamentos -->
+            <h2>Acompanhamentos</h2>
+            <p:panelGrid columns="1" styleClass="product-grid">
+                <ui:repeat value="#{produtoBean.acompanhamentos}" var="acompanhamento">
+                    <div class="produto">
+                        <h3>#{acompanhamento.nome}</h3>
+                        <p>#{acompanhamento.descricao}</p>
+                        <span>R$ #{acompanhamento.preco}</span>
+                        <p:spinner value="#{acompanhamento.quantidade}" size="2" min="0" max="99" />
+                    </div>
+                </ui:repeat>
+            </p:panelGrid>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <p>Total: R$ #{sacolaBean.total}</p>
+            <p:commandButton value="Ver Sacola" action="#{sacolaBean.verSacola}" styleClass="sacola-btn" />
+            <div class="footer-info">
+                <p>Descrição da Empresa</p>
+                <p>Contato: WhatsApp, Facebook</p>
+            </div>
+        </div>
+    </h:body>
+</html>

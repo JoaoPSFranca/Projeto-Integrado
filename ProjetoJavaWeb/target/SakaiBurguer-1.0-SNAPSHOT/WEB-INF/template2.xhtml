@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="/css/default.css"/>
+        <h:outputStylesheet name="/css/cssLayout.css"/>
+        <h:outputStylesheet name="/css/primeflex/primeflex.min.css"/>
+        <h:outputStylesheet name="/css/teste2.css"/>
+        <title><ui:insert name="titulo">Meu Aplicativo</ui:insert></title>
+    </h:head>
+
+    <h:body>
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h:outputText value="Logo/Marca" styleClass="logo" />
+            <p:commandButton value="Perfil" icon="pi pi-user" styleClass="perfil-btn" />
+        </div>
+
+        <!-- Menu de Navegação -->
+        <div class="menu">
+            <p:menu>
+                <p:menuitem value="Lanches" url="lanches.xhtml" />
+                <p:menuitem value="Bebidas" url="bebidas.xhtml" />
+                <p:menuitem value="Acompanhamentos" url="acompanhamentos.xhtml" />
+            </p:menu>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="container">
+            <ui:insert name="conteudo">
+                <!-- Conteúdo específico será injetado aqui -->
+            </ui:insert>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <p><ui:insert name="rodape">© 2024 Minha Empresa</ui:insert></p>
+        </div>
+    </h:body>
+</html>
