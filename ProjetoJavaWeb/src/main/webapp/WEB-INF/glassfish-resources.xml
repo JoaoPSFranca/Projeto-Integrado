@@ -6,7 +6,7 @@
         <property name="portNumber" value="3306"/>
         <property name="databaseName" value="sakai_burguer"/>
         <property name="User" value="root"/>
-        <property name="Password" value="ifsp"/>
+        <property name="Password" value="root"/>
         <property name="URL" value="jdbc:mysql://localhost:3306/sakai_burguer?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;createDatabaseIfNotExist=true&amp;serverTimezone=UTC&amp;serverTimezone=America/Sao_Paulo"/>
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
     </jdbc-connection-pool>
