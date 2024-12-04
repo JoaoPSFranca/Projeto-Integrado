@@ -1,3 +1,7 @@
-/home/aluno/Documentos/BCC-Projeto-Integrado/ProjetoJavaWeb/src/main/java/br/edu/ifsp/pep/dao/AbstractDAO.java
-/home/aluno/Documentos/BCC-Projeto-Integrado/ProjetoJavaWeb/src/main/java/br/edu/ifsp/pep/util/Mensagem.java
-/home/aluno/Documentos/BCC-Projeto-Integrado/ProjetoJavaWeb/src/main/java/br/edu/ifsp/pep/listener/LifeCycleListener.java
+C:\Projects\Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\Cliente.java
+C:\Projects\Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\Pessoa.java
+C:\Projects\Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\util\Mensagem.java
+C:\Projects\Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\Endereco.java
+C:\Projects\Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\listener\LifeCycleListener.java
+C:\Projects\Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\dao\AbstractDAO.java
+C:\Projects\Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\NivelAcesso.java
