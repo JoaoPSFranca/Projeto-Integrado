@@ -1,0 +1,7 @@
+br\edu\ifsp\pep\entity\Pessoa.class
+br\edu\ifsp\pep\entity\Endereco.class
+br\edu\ifsp\pep\listener\LifeCycleListener.class
+br\edu\ifsp\pep\util\Mensagem.class
+br\edu\ifsp\pep\dao\AbstractDAO.class
+br\edu\ifsp\pep\entity\Cliente.class
+br\edu\ifsp\pep\entity\NivelAcesso.class
