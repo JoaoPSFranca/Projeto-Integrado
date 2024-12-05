@@ -1,29 +1,46 @@
 package br.edu.ifsp.pep.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Caixa {
-    
+@Entity
+@Table(name = "caixa")
+public class Caixa implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codigo")
     private int codigo;
     
-    private Date dataabertura;
+    @Column(name = "data_abertura", nullable = false)
+    private Date dataAbertura;
     
+    @Column(name = "data_fechamento", nullable = true)
     private Date dataFechamento;
     
+    @Column(name = "saldo_inicial", nullable = false)
     private double saldoInicial;
     
+    @Column(name = "saldo_final", nullable = true)
     private double saldoFinal;
     
+    @Column(name = "saldo_atual", nullable = false)
     private double saldoAtual;
     
+    @Column(name = "status_caixa", nullable = false)
     private boolean statusCaixa;
 
     public Caixa() {
     }
 
-    public Caixa(int codigo, Date dataabertura, Date dataFechamento, double saldoInicial, double saldoFinal, double saldoAtual, boolean statusCaixa) {
+    public Caixa(int codigo, Date dataAbertura, Date dataFechamento, double saldoInicial, double saldoFinal, double saldoAtual, boolean statusCaixa) {
         this.codigo = codigo;
-        this.dataabertura = dataabertura;
+        this.dataAbertura = dataAbertura;
         this.dataFechamento = dataFechamento;
         this.saldoInicial = saldoInicial;
         this.saldoFinal = saldoFinal;
@@ -39,12 +56,12 @@ public class Caixa {
         this.codigo = codigo;
     }
 
-    public Date getDataabertura() {
-        return dataabertura;
+    public Date getDataAbertura() {
+        return dataAbertura;
     }
 
-    public void setDataabertura(Date dataabertura) {
-        this.dataabertura = dataabertura;
+    public void setDataabertura(Date dataAbertura) {
+        this.dataAbertura = dataAbertura;
     }
 
     public Date getDataFechamento() {
@@ -86,7 +103,4 @@ public class Caixa {
     public void setStatusCaixa(boolean statusCaixa) {
         this.statusCaixa = statusCaixa;
     }
-    
-    
-    
 }

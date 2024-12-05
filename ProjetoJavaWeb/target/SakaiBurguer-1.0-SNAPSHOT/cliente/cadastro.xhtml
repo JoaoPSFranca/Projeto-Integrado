@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      template="/WEB-INF/template-cliente.xhtml">
+
+    <ui:define name="style">
+<!--        Arruma esse css pelo amor
+        <h:outputStylesheet name="/css/style_cadastros.css" />-->
+    </ui:define>
+
+    <ui:define name="content">
+        <div>
+            <h:form class="form-container">
+                <h2>Cadastro de Cliente</h2>
+
+                <div class="input-container">
+                    <span class="ui-float-label">
+                        <p:inputText id="nome" value="" required="true" />
+                        <p:outputLabel for="@previous" value="Nome:" />
+                    </span>
+                </div>
+
+                <div class="input-container">
+                    <span class="ui-float-label">
+                        <p:inputText id="cpf" value="" required="true" />
+                        <p:outputLabel for="@previous" value="Cpf:" />
+                    </span>
+                </div>
+
+                <div class="input-container">
+                    <span class="ui-float-label">
+                        <p:inputText id="telefone" value="" required="true" />
+                        <p:outputLabel for="@previous" value="Telefone:" />
+                    </span>
+                </div>
+
+                <div class="input-container">
+                    <span class="ui-float-label">
+                        <p:inputText id="login" value="" required="true" />
+                        <p:outputLabel for="@previous" value="Login:" />
+                    </span>
+                </div>
+
+                <div class="input-container">
+                    <span class="ui-float-label">
+                        <p:password id="senha" value="" toggleMask="true" redisplay="true"/>
+                        <p:outputLabel for="@previous" value="Senha" />
+                    </span>
+                </div>
+
+                <p:commandButton value="Cadastrar" update="@form" />
+            </h:form>
+
+        </div>
+    </ui:define>
+
+</ui:composition>

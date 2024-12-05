@@ -5,38 +5,58 @@ import br.edu.ifsp.pep.enuns.MetodoPagamento;
 import br.edu.ifsp.pep.enuns.StatusPedido;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "pedido")
-public class Pedido {
-    
+public class Pedido implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo")
     private int codigo;
     
+    @Column(name = "observacao", nullable = false)
     private String observacao;
     
+    @Column(name = "valor_total", nullable = false)
     private double valorTotal;
     
+    @Column(name = "data_pedido", nullable = false)
     private Date dataPedido;
     
+    @ManyToMany
+    @JoinTable(name = "itemPedido",
+            joinColumns = @JoinColumn(name = "pedido_codigo"),
+            inverseJoinColumns = @JoinColumn(name = "pedido_codigo"))
     private List<Produto> listaPedido;
     
+    @Enumerated(EnumType.STRING)
+    @Column(name = "metodo_pagamento", nullable = false)
     private MetodoPagamento metodoPagamento;
     
+    @Enumerated(EnumType.STRING)
+    @Column(name = "metodo_entrega", nullable = false)
     private MetodoEntrega metodoEntrega;
     
+    @Column(name = "valor_frete", nullable = false)
     private double valorFrete;
     
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
     private StatusPedido status;
     
+    @JoinColumn(name = "cliente_codigo")
     private Cliente cliente;
 
     public Pedido() {
@@ -134,7 +154,4 @@ public class Pedido {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    
-    
-    
 }

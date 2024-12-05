@@ -1,15 +1,29 @@
 package br.edu.ifsp.pep.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Movimento {
-    
+@Entity
+@Table(name = "movimento")
+public class Movimento implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codigo")
     private int codigo;
     
+    @Column(name = "descricao", nullable = false)
     private String descricao;
     
+    @Column(name = "data", nullable = false)
     private Date data;
     
+    @Column(name = "valor", nullable = false)
     private double valor;
 
     public Movimento() {
@@ -53,7 +67,4 @@ public class Movimento {
     public void setValor(double valor) {
         this.valor = valor;
     }
-    
-    
-    
 }
