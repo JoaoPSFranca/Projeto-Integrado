@@ -16,21 +16,16 @@
     </h:head>
 
     <h:body>
-        <!-- Cabeçalho -->
-        <div class="header">
-            <!--<img src="../resources/Images/SakaiBurguerLogo.png" class="logo" alt="logo"/>-->
-            <p:commandButton value="Perfil" icon="pi pi-user" styleClass="perfil-btn" />
-        </div>
-
-        <!-- Menu de Navegação -->
-        <div class="menu">
-            <p:menu>
-                <p:menuitem value="Lanches" url="lanches.xhtml" />
-                <p:menuitem value="Bebidas" url="bebidas.xhtml" />
-                <p:menuitem value="Acompanhamentos" url="acompanhamentos.xhtml" />
-            </p:menu>
-        </div>
-
+        <h:panelGrid columns="5" id="panelGrid1" class="header">
+            <p:outputLabel> 
+                <i class="pi pi-shop"  style="font-size: 2.5rem"/>
+            </p:outputLabel>
+            <p:outputLabel value="Lanches" />
+            <p:outputLabel value="Acompanhamentos" />
+            <p:outputLabel value="Bebidas" class="header-Acertar"/>
+            <p:commandButton value="Perfil" icon="pi pi-user" />
+        </h:panelGrid>
+        
         <!-- Conteúdo Principal -->
         <div class="container">
             <ui:insert name="conteudo">
