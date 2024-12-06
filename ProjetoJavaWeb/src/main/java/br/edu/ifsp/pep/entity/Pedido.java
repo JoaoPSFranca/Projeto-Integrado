@@ -3,6 +3,7 @@ package br.edu.ifsp.pep.entity;
 import br.edu.ifsp.pep.enuns.MetodoEntrega;
 import br.edu.ifsp.pep.enuns.MetodoPagamento;
 import br.edu.ifsp.pep.enuns.StatusPedido;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -11,9 +12,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -33,13 +35,11 @@ public class Pedido implements Serializable {
     private double valorTotal;
     
     @Column(name = "data_pedido", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataPedido;
     
-    @ManyToMany
-    @JoinTable(name = "itemPedido",
-            joinColumns = @JoinColumn(name = "pedido_codigo"),
-            inverseJoinColumns = @JoinColumn(name = "pedido_codigo"))
-    private List<Produto> listaPedido;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido")
+    private List<ItemPedido> listaPedido;
     
     @Enumerated(EnumType.STRING)
     @Column(name = "metodo_pagamento", nullable = false)
@@ -56,18 +56,17 @@ public class Pedido implements Serializable {
     @Column(name = "status", nullable = false)
     private StatusPedido status;
     
-    @JoinColumn(name = "cliente_codigo")
+    @JoinColumn(name = "cliente_codigo",nullable = false)
     private Cliente cliente;
 
     public Pedido() {
     }
 
-    public Pedido(int codigo, String observacao, double valorTotal, Date dataPedido, List<Produto> listaPedido, MetodoPagamento metodoPagamento, MetodoEntrega metodoEntrega, double valorFrete, StatusPedido status, Cliente cliente) {
+    public Pedido(int codigo, String observacao, double valorTotal, Date dataPedido, MetodoPagamento metodoPagamento, MetodoEntrega metodoEntrega, double valorFrete, StatusPedido status, Cliente cliente) {
         this.codigo = codigo;
         this.observacao = observacao;
         this.valorTotal = valorTotal;
         this.dataPedido = dataPedido;
-        this.listaPedido = listaPedido;
         this.metodoPagamento = metodoPagamento;
         this.metodoEntrega = metodoEntrega;
         this.valorFrete = valorFrete;
@@ -107,11 +106,11 @@ public class Pedido implements Serializable {
         this.dataPedido = dataPedido;
     }
 
-    public List<Produto> getListaPedido() {
+    public List<ItemPedido> getListaPedido() {
         return listaPedido;
     }
 
-    public void setListaPedido(List<Produto> listaPedido) {
+    public void setListaPedido(List<ItemPedido> listaPedido) {
         this.listaPedido = listaPedido;
     }
 
@@ -154,4 +153,28 @@ public class Pedido implements Serializable {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + this.codigo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pedido other = (Pedido) obj;
+        return this.codigo == other.codigo;
+    }
+    
+    
 }

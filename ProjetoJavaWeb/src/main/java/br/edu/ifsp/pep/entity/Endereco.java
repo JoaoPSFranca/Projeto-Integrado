@@ -11,6 +11,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "endereco")
 public class Endereco implements Serializable {
+    
     @Id
     @Column(name = "cep", length = 20)
     private String cep;
@@ -21,8 +22,8 @@ public class Endereco implements Serializable {
     @Column(name = "numero",  nullable = false)
     private int numero;
     
-    @ManyToOne
-    @JoinColumn(name = "cliente_codigo")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "cliente_codigo", nullable = false)
     private Cliente cliente;
 
     public String getCep() {

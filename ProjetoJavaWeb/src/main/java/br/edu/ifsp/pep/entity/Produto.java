@@ -1,12 +1,15 @@
 package br.edu.ifsp.pep.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "produto")
@@ -21,6 +24,9 @@ public class Produto implements Serializable {
     
     @Column(name = "valor", nullable = false)
     private double valor;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "produto")
+    private List<ItemPedido> listaPedido;
 
     public Produto(int codigo, String descricao, double valor) {
         this.codigo = codigo;
@@ -54,4 +60,36 @@ public class Produto implements Serializable {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    public List<ItemPedido> getListaPedido() {
+        return listaPedido;
+    }
+
+    public void setListaPedido(List<ItemPedido> listaPedido) {
+        this.listaPedido = listaPedido;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 37 * hash + this.codigo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Produto other = (Produto) obj;
+        return this.codigo == other.codigo;
+    }
+    
+    
 }

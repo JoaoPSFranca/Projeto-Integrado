@@ -6,10 +6,10 @@ br\edu\ifsp\pep\entity\Pedido.class
 br\edu\ifsp\pep\entity\Cliente.class
 br\edu\ifsp\pep\enuns\StatusPedido.class
 br\edu\ifsp\pep\entity\Pessoa.class
-br\edu\ifsp\pep\entity\Caixa.class
 br\edu\ifsp\pep\enuns\NivelAcesso.class
 br\edu\ifsp\pep\enuns\MetodoPagamento.class
+br\edu\ifsp\pep\entity\ItemPedido.class
 br\edu\ifsp\pep\listener\LifeCycleListener.class
-br\edu\ifsp\pep\entity\Movimento.class
+br\edu\ifsp\pep\entity\ItemPedidoPK.class
 br\edu\ifsp\pep\util\Mensagem.class
 br\edu\ifsp\pep\dao\AbstractDAO.class
