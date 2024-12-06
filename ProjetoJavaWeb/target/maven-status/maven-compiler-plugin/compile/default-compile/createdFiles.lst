@@ -5,7 +5,6 @@ br\edu\ifsp\pep\enuns\MetodoEntrega.class
 br\edu\ifsp\pep\entity\Endereco.class
 br\edu\ifsp\pep\entity\Produto.class
 br\edu\ifsp\pep\entity\Pedido.class
-br\edu\ifsp\pep\entity\Cliente.class
 br\edu\ifsp\pep\enuns\StatusPedido.class
 br\edu\ifsp\pep\entity\Pessoa.class
 br\edu\ifsp\pep\enuns\NivelAcesso.class

@@ -1,26 +1,22 @@
 package br.edu.ifsp.pep.entity;
 
 import br.edu.ifsp.pep.enuns.NivelAcesso;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.DiscriminatorType;
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Null;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "pessoa")
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorValue(value = "PESSOA_CLIENTE")
-@DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
 public class Pessoa implements Serializable {
     
     @Id
@@ -46,6 +42,10 @@ public class Pessoa implements Serializable {
     
     @Column(name = "senha", length = 50, nullable = false)
     private String senha;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pessoa")
+    @Null
+    private List<Endereco> enderecos;
 
     public Pessoa(int codigo, String nome, String telefone, String cpf, NivelAcesso nivelAcesso, String login, String senha) {
         this.codigo = codigo;
@@ -115,4 +115,13 @@ public class Pessoa implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+    
 }
