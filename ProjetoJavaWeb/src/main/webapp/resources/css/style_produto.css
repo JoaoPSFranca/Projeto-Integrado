@@ -8,7 +8,7 @@ body {
 }
 
 .form-container {
-    width: 400px;
+    width: 60%;
     margin: 50px auto;
     background-color: white;
     padding: 10px;
@@ -23,7 +23,7 @@ h2 {
 }
 
 .ui-inputfield {
-    width: 95% !important;
+    width: 85% !important;
     max-width: 400px;
     padding: 10px;
     font-size: 18px;
