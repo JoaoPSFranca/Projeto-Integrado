@@ -56,13 +56,13 @@ public class Pedido implements Serializable {
     @Column(name = "status", nullable = false)
     private StatusPedido status;
     
-    @JoinColumn(name = "cliente_codigo",nullable = false)
-    private Cliente cliente;
+    @JoinColumn(name = "pessoa_codigo",nullable = false)
+    private Pessoa pessoa;
 
     public Pedido() {
     }
 
-    public Pedido(int codigo, String observacao, double valorTotal, Date dataPedido, MetodoPagamento metodoPagamento, MetodoEntrega metodoEntrega, double valorFrete, StatusPedido status, Cliente cliente) {
+    public Pedido(int codigo, String observacao, double valorTotal, Date dataPedido, MetodoPagamento metodoPagamento, MetodoEntrega metodoEntrega, double valorFrete, StatusPedido status, Pessoa pessoa) {
         this.codigo = codigo;
         this.observacao = observacao;
         this.valorTotal = valorTotal;
@@ -71,7 +71,7 @@ public class Pedido implements Serializable {
         this.metodoEntrega = metodoEntrega;
         this.valorFrete = valorFrete;
         this.status = status;
-        this.cliente = cliente;
+        this.pessoa = pessoa;
     }
 
     public int getCodigo() {
@@ -146,12 +146,12 @@ public class Pedido implements Serializable {
         this.status = status;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCliente(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 
     @Override
