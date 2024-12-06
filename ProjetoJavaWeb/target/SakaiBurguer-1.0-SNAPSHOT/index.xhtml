@@ -37,9 +37,9 @@
             </ui:repeat>
             
             <div class="dark sacola">
-                <p:outputLabel value="#{pedidoController.valorTotal}" class="output output-sacola"/>
+                <p:outputLabel value="#{pedidoController.total}" class="output output-sacola"/>
                 <p:outputLabel value="#{pedidoController.quantidadeTotal}" class="output output-sacola"/>
-                <p:commandButton value="Finalizar Compra" class="btn btn-inverter" style="margin: 0px;"/>
+                <p:commandButton value="Finalizar Compra" class="btn btn-inverter" style="margin: 0px;" action="#{pedidoController.finalizarCompra(loginController.pessoaAutenticada)}" update="@all"/>
             </div>
         </h:form>
     </ui:define>

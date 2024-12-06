@@ -3,12 +3,18 @@ package br.edu.ifsp.pep.controller;
 import br.edu.ifsp.pep.dao.PedidoDAO;
 import br.edu.ifsp.pep.entity.ItemPedido;
 import br.edu.ifsp.pep.entity.Pedido;
+import br.edu.ifsp.pep.entity.Pessoa;
 import br.edu.ifsp.pep.entity.Produto;
+import br.edu.ifsp.pep.enuns.MetodoEntrega;
+import br.edu.ifsp.pep.enuns.MetodoPagamento;
+import br.edu.ifsp.pep.enuns.StatusPedido;
+import br.edu.ifsp.pep.util.Mensagem;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Named
@@ -102,7 +108,7 @@ public class PedidoController implements Serializable {
             return 0;
     }
 
-    public double getValorTotal(){
+    public double getTotal(){
         double sum = 0.00;
         
         if (pedido.getListaPedido() != null) 
@@ -122,5 +128,25 @@ public class PedidoController implements Serializable {
         return sum;
     }
 
-    
+    public String finalizarCompra(Pessoa pessoa){
+        if (pessoa != null) {
+            pedido.setCliente(pessoa);
+            pedido.setDataPedido(new Date());
+            pedido.setValorFrete(5);
+            pedido.setMetodoEntrega(MetodoEntrega.entrega);
+            pedido.setMetodoPagamento(MetodoPagamento.debito);
+            pedido.setObservacao("");
+            pedido.setValorTotal(getTotal() + pedido.getValorFrete());
+            pedido.setStatus(StatusPedido.preparando);
+            
+            pedidoDAO.inserir(pedido);
+            Mensagem.sucesso("Pedido cadastrado com sucesso. ");
+            
+            return "/index.xhtml";
+        } else {
+            Mensagem.erro("É Preciso logar antes de realizar um pedido. ");
+            
+            return "/pessoa/login.xhtml";
+        }
+    }
 }
