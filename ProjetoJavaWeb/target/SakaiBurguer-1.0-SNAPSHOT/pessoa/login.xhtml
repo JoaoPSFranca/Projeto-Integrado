@@ -20,17 +20,18 @@
                 <h2>Login</h2>
                 <div class="input-container" >
                     <span class="ui-float-label">
-                        <p:inputText id="login" value="" required="true" />
+                        <p:inputText id="login" value="#{loginController.pessoa.login}" required="true" />
                         <p:outputLabel for="@previous" value="Login" />
                     </span>
                 </div>
                 <div class="input-container">
                     <span class="ui-float-label">
-                        <p:inputText id="senha" value="" required="true" />
+                        <p:password id="senha" value="#{loginController.pessoa.senha}" toggleMask="true" redisplay="true"/>
                         <p:outputLabel for="@previous" value="Senha" />
                     </span>
                 </div>           
-                <p:commandButton class="acessar btn" value="Acessar" update="growl"/>
+                <p:commandButton class="acessar" value="Acessar" update="growl" 
+                                 action="#{loginController.autenticar}"/>
             </h:form>
 
         </div>

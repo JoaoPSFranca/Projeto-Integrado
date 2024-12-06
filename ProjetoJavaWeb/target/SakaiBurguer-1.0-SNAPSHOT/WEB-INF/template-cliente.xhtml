@@ -25,30 +25,32 @@
                         <p:menuitem action="/index" class="logo"> 
                             <i class="pi pi-shop" style="font-size: 2.5rem;"/>
                         </p:menuitem>
-                        
+
                         <f:facet name="end">
                             <p:commandButton value="Cadastre-se" 
                                              icon="pi pi-fw pi-user-plus" 
                                              action="/cliente/cadastro" 
-                                             styleClass="btn"/>
+                                             styleClass="btn"
+                                             rendered="#{loginController.pessoaAutenticada == null}"/>
 
                             <p:commandButton value="Login" 
                                              icon="pi pi-fw pi-sign-in" 
                                              action="/pessoa/login" 
-                                             styleClass="btn btn-inverter"/>
+                                             styleClass="btn btn-inverter"
+                                             rendered="#{loginController.pessoaAutenticada == null}"/>
                             
-<!--                            <p:submenu label="Perfil" icon="pi pi-fw pi-user" rendered="#{loginController.pessoaAutenticada != null}">
-                                <p:commandButton value="Logout" icon="pi pi-fw pi-sign-out"
-                                                 styleClass="ui-button-info" 
-                                                 action ="#{loginController.sair()}"
+                            <p:submenu label="Perfil" icon="pi pi-fw pi-user" rendered="#{loginController.pessoaAutenticada != null}">
+                            <p:commandButton value="Logout" icon="pi pi-fw pi-sign-out"
+                                                 styleClass="btn" 
+                                                 action ="#{loginController.desconnect()}"
                                                  update="@all"/>
-                            </p:submenu>-->
+                            </p:submenu>
                         </f:facet>
                     </p:menubar>
                 </h:form>
             </ui:insert>
         </div>
-        
+
         <div id="content" style="min-height: 70vh;">
             <ui:insert name="content">Content</ui:insert>
         </div>

@@ -27,30 +27,32 @@
                         </p:menuitem>
                         <p:menuitem value="Caixa" outcome="/index" style="margin: 0px 20px;"/>
                         <p:menuitem value="Pedidos" outcome="/index" style="margin: 0px 20px;"/>
-                        
+
                         <f:facet name="end">
                             <p:commandButton value="Cadastre-se" 
                                              icon="pi pi-fw pi-user-plus" 
                                              action="/cliente/cadastro" 
-                                             style="margin-right: 10px; margin-top: 10px; background-color: #333;"/>
+                                             style="margin-right: 10px; margin-top: 10px; background-color: #333;"
+                                             rendered="#{loginController.pessoaAutenticada == null}"/>
 
                             <p:commandButton value="Login" 
                                              icon="pi pi-fw pi-sign-in" 
                                              action="/pessoa/login" 
-                                             style="background-color: #333;"/>
-                            
-<!--                            <p:submenu label="Perfil" icon="pi pi-fw pi-user" rendered="#{loginController.pessoaAutenticada != null}">
+                                             style="background-color: #333;"
+                                             rendered="#{loginController.pessoaAutenticada == null}"/>
+
+                            <p:submenu label="Perfil" icon="pi pi-fw pi-user" rendered="#{loginController.pessoaAutenticada != null}">
                                 <p:commandButton value="Logout" icon="pi pi-fw pi-sign-out"
-                                                 styleClass="ui-button-info" 
-                                                 action ="#{loginController.sair()}"
+                                                 styleClass="btn" 
+                                                 action ="#{loginController.desconnect()}"
                                                  update="@all"/>
-                            </p:submenu>-->
+                            </p:submenu>
                         </f:facet>
                     </p:menubar>
                 </h:form>
             </ui:insert>
         </div>
-        
+
         <div id="content" style="min-height: 70vh;">
             <ui:insert name="content">Content</ui:insert>
         </div>

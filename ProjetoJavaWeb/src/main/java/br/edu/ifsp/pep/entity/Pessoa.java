@@ -9,14 +9,22 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Null;
 import java.io.Serializable;
 import java.util.List;
 
+
 @Entity
 @Table(name = "pessoa")
+
+@NamedQueries({
+        @NamedQuery(name = "Pessoa.autenticar", query = "SELECT p FROM Pessoa p WHERE p.login = :login AND p.senha = :senha"),
+        @NamedQuery(name = "Pessoa.buscarTodas", query = "FROM Pessoa p")
+})
 public class Pessoa implements Serializable {
     
     @Id

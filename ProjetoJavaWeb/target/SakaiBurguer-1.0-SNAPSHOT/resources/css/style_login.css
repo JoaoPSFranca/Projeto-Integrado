@@ -22,6 +22,10 @@ h2 {
     margin-bottom: 18px; 
 }
 
+.ui-password {
+    width: 65%;
+}
+
 .ui-inputfield {
     width: 95% !important;
     max-width: 400px;
