@@ -5,6 +5,7 @@ C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\e
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\enuns\MetodoPagamento.java
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\Pedido.java
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\addadmin\main.java
+C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\controller\PedidoController.java
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\ItemPedido.java
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\dao\PessoaDAO.java
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\Endereco.java
@@ -14,4 +15,7 @@ C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\c
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\ItemPedidoPK.java
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\entity\Pessoa.java
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\controller\PessoaController.java
+C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\dao\PedidoDAO.java
+C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\dao\ProdutoDAO.java
 C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\enuns\MetodoEntrega.java
+C:\Projects\BCC-Projeto-Integrado\ProjetoJavaWeb\src\main\java\br\edu\ifsp\pep\controller\ProdutoController.java
