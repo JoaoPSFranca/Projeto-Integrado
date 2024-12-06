@@ -42,9 +42,9 @@ public class PessoaController implements Serializable{
         return null;
     }
     
-    public String cadastro(){
+    public String cadastroCliente(){
         
-        this.pessoa.setNivelAcesso(NivelAcesso.Administrador);
+        this.pessoa.setNivelAcesso(NivelAcesso.Cliente);
         pessoaDAO.inserir(pessoa);
         
         lg.setPessoa(pessoa);
@@ -91,7 +91,4 @@ public class PessoaController implements Serializable{
     public void setPessoas(List<Pessoa> pessoas) {
         this.pessoas = pessoas;
     }
-    
-    
-    
 }

@@ -23,5 +23,4 @@ public class PessoaDAO extends AbstractDAO<Pessoa> {
         }
     }
     
-    
 }
