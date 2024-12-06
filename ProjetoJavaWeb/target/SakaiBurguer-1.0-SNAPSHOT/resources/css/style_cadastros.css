@@ -1,40 +1,48 @@
 body {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* Altura total da janela */
     margin: 0; /* Remove margens padrão */
     background-color: #f4f4f4; /* Cor de fundo */
 }
 
+.header, .footer {
+    height: 100px; /* Exemplo de altura para partes fixas */
+}
+
 .form-container {
+    width: 420px; /* Largura do formulário */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: relative;
+    top: calc(50% - 150px); /* Ajuste 150px pela metade da altura do formulário */
     background-color: white; /* Cor de fundo do formulário */
     padding: 20px; /* Espaçamento interno */
     border-radius: 8px; /* Bordas arredondadas */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    width: 300px; /* Largura do formulário */
+    z-index: 10;
 }
 
 h2 {
     text-align: center; /* Centraliza o título */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    margin-bottom: 18px; /* Espaçamento abaixo do título */
 }
 
 .ui-float-label {
     display: flex; /* Usar flexbox para alinhar label e input */
     flex-direction: column; /* Coloca o label acima do input */
-    margin-bottom: 15px; /* Espaçamento entre os campos */
+    margin-bottom: 20px; /* Espaçamento entre os campos */
 }
 
-.p-inputtext, .p-password {
-    width: 100%; /* Faz os campos ocuparem toda a largura */
+.ui-inputfield {
+    width: 85%; /* Faz os campos ocuparem toda a largura */
     padding: 10px; /* Espaçamento interno dos campos */
     border: 1px solid #ccc; /* Borda dos campos */
     border-radius: 4px; /* Bordas arredondadas dos campos */
     box-sizing: border-box; /* Inclui padding e border na largura total */
 }
 
-.p-commandButton {
+.ui-password {
+    width: 65%;
+}
+
+.cadastrar {
     width: 100%; /* Botão ocupa toda a largura */
     padding: 10px; /* Espaçamento interno do botão */
     background-color: #007bff; /* Cor de fundo do botão */
@@ -44,7 +52,7 @@ h2 {
     cursor: pointer; /* Muda o cursor ao passar sobre o botão */
 }
 
-.p-commandButton:hover {
+.cadastrar:hover {
     background-color: #0056b3; /* Cor do botão ao passar o mouse */
 }
 

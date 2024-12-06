@@ -8,12 +8,13 @@
       template="/WEB-INF/template-cliente.xhtml">
 
     <ui:define name="style">
-<!--        Arruma esse css pelo amor
-        <h:outputStylesheet name="/css/style_cadastros.css" />-->
+<!--        Arruma esse css pelo amor -->
+        <h:outputStylesheet name="/css/style_cadastros.css" />
     </ui:define>
 
     <ui:define name="content">
         <div>
+            
             <h:form class="form-container">
                 <h2>Cadastro de Cliente</h2>
 
@@ -52,7 +53,7 @@
                     </span>
                 </div>
 
-                <p:commandButton value="Cadastrar" update="@form" />
+                <p:commandButton class="cadastrar" value="Cadastrar" update="@form" />
             </h:form>
 
         </div>
