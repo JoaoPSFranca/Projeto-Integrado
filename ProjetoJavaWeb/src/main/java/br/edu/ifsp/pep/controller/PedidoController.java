@@ -37,7 +37,7 @@ public class PedidoController implements Serializable {
     public void sumItemPedido(Produto p){
         int flag = 0;
         
-        if(pedido.getListaPedido() != null){
+        if(pedido.getListaPedido() != null) {
            for (ItemPedido ip : pedido.getListaPedido()) {
                 if (ip.getProduto().getCodigo() == p.getCodigo()){
                     flag = pedido.getListaPedido().indexOf(ip);
@@ -49,15 +49,18 @@ public class PedidoController implements Serializable {
         
         ItemPedido item;
         
-        if (flag == 0){
+        if (flag == 0) {
             item = new ItemPedido(1, p.getValor(),  p, pedido);
             pedido.getListaPedido().add(item);
+            System.out.println("Produto: " + item.getProduto().getNome() + " não encontrado");
         } else {
             item = pedido.getListaPedido().get(flag);
             item.setQuantidade(item.getQuantidade() + 1);
             item.setPreco(item.getQuantidade() * item.getProduto().getValor());
             pedido.getListaPedido().set(flag, item);
         }
+        
+        System.out.println("Produto: " + item.getProduto().getNome() + " | Quantidade: " + item.getQuantidade());
     }
 
     public void decreaseItemPedido(Produto p){
@@ -101,7 +104,7 @@ public class PedidoController implements Serializable {
         
         ItemPedido item;
         
-        if (flag != 0){
+        if (flag != 0) {
             item = pedido.getListaPedido().get(flag);
             return item.getQuantidade();
         } else
