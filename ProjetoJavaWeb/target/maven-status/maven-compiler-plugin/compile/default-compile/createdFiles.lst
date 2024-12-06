@@ -1,4 +1,6 @@
+br\edu\ifsp\pep\controller\PedidoController.class
 br\edu\ifsp\pep\controller\PessoaController.class
+br\edu\ifsp\pep\dao\ProdutoDAO.class
 br\edu\ifsp\pep\enuns\MetodoEntrega.class
 br\edu\ifsp\pep\entity\Endereco.class
 br\edu\ifsp\pep\entity\Produto.class
@@ -11,5 +13,7 @@ br\edu\ifsp\pep\enuns\MetodoPagamento.class
 br\edu\ifsp\pep\entity\ItemPedido.class
 br\edu\ifsp\pep\listener\LifeCycleListener.class
 br\edu\ifsp\pep\entity\ItemPedidoPK.class
+br\edu\ifsp\pep\dao\PedidoDAO.class
+br\edu\ifsp\pep\controller\ProdutoController.class
 br\edu\ifsp\pep\util\Mensagem.class
 br\edu\ifsp\pep\dao\AbstractDAO.class

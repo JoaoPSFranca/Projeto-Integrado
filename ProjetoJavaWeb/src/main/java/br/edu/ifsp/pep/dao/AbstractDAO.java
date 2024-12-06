@@ -19,5 +19,4 @@ public abstract class AbstractDAO<T> {
     public void alterar(T entity) {
         em.merge(entity);
     }
-
 }

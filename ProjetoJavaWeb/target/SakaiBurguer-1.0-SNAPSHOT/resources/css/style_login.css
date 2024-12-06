@@ -38,21 +38,10 @@ h2 {
     color: #666;
 }
 
-.acessar{
-    width: 30% !important;
-    font-size: 18px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+.ui-button.acessar{
+    width: 94%;
     display: flex;
     justify-content: center;
-}
-
-.acessar:hover {
-    background-color: #0056b3;
 }
 
 .input-container {

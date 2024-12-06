@@ -13,33 +13,33 @@
     
     <ui:define name="content">
         <h:form id="formGeral">
-            <ui:repeat value="" var="">
+            <ui:repeat value="#{produtoController.produtos}" var="produto">
                 <div class="product-card">
                     <div class="product-image">
-                        <p:outputLabel value="Produto" />
+                        <p:outputLabel value="#{produto.nome}" />
                     </div>
 
                     <div class="product-details">
                         <div style="display: flex">
-                            <p:outputLabel value="Hamburguer" class="output" />
-                            <p:outputLabel value="R$ 20,00" class="output output-preco"/>
+                            <p:outputLabel value="#{produto.nome}" class="output" />
+                            <p:outputLabel value="R$ #{produto.valor}" class="output output-preco"/>
                         </div>
 
-                        <p:outputLabel value="" class="description"/>
+                        <p:outputLabel value="#{produto.descricao}" class="description"/>
                     </div>
 
                     <div class="product-quantity-controls">
-                        <p:commandButton value="+" class="btn btn-circle" />
-                        <p:commandButton value="-" class="btn btn-circle" />
-                        <p:outputLabel value="0" styleClass="quantity-label" />
+                        <p:commandButton value="+" class="btn btn-circle" action="#{pedidoController.sumItemPedido(produto)}" update="@all"/>
+                        <p:commandButton value="-" class="btn btn-circle" action="#{pedidoController.decreaseItemPedido(produto)}" update="@all"/>
+                        <p:outputLabel value="#{pedidoController.getQuantidadeItemPedido(produto)}" styleClass="quantity-label" />
                     </div>
                 </div>
             </ui:repeat>
             
             <div class="dark sacola">
-                <p:outputLabel value="Preco" class="output output-sacola"/>
-                <p:outputLabel value="Quant" class="output output-sacola"/>
-                <p:commandButton value="Ver Sacola" class="btn btn-inverter" style="margin: 0px;"/>
+                <p:outputLabel value="#{pedidoController.valorTotal}" class="output output-sacola"/>
+                <p:outputLabel value="#{pedidoController.quantidadeTotal}" class="output output-sacola"/>
+                <p:commandButton value="Finalizar Compra" class="btn btn-inverter" style="margin: 0px;" action=""/>
             </div>
         </h:form>
     </ui:define>

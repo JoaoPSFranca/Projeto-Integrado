@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.io.Serializable;
@@ -13,11 +15,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "produto")
+@NamedQueries({
+    @NamedQuery(name="Produto.buscarTodos", query="FROM Produto p")
+})
 public class Produto implements Serializable {
     @Id
     @Column(name = "codigo")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
+    
+    @Column(name="nome", nullable = false)
+    private String nome;
     
     @Column(name = "descricao", nullable = false)
     private String descricao;
@@ -69,6 +77,14 @@ public class Produto implements Serializable {
         this.listaPedido = listaPedido;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
@@ -90,6 +106,4 @@ public class Produto implements Serializable {
         final Produto other = (Produto) obj;
         return this.codigo == other.codigo;
     }
-    
-    
 }

@@ -12,6 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -22,6 +24,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "pedido")
+@NamedQueries({
+    @NamedQuery(name="Pedido.buscarTodos", query = "FROM Pedido p")
+})
 public class Pedido implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -175,6 +180,4 @@ public class Pedido implements Serializable {
         final Pedido other = (Pedido) obj;
         return this.codigo == other.codigo;
     }
-    
-    
 }
