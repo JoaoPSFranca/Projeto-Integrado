@@ -6,9 +6,12 @@ br\edu\ifsp\pep\entity\Pedido.class
 br\edu\ifsp\pep\entity\Cliente.class
 br\edu\ifsp\pep\enuns\StatusPedido.class
 br\edu\ifsp\pep\entity\Pessoa.class
+br\edu\ifsp\pep\controller\LoginController.class
 br\edu\ifsp\pep\enuns\NivelAcesso.class
+br\edu\ifsp\pep\addadmin\main.class
 br\edu\ifsp\pep\enuns\MetodoPagamento.class
 br\edu\ifsp\pep\entity\ItemPedido.class
+br\edu\ifsp\pep\dao\PessoaDAO.class
 br\edu\ifsp\pep\listener\LifeCycleListener.class
 br\edu\ifsp\pep\entity\ItemPedidoPK.class
 br\edu\ifsp\pep\util\Mensagem.class

@@ -20,40 +20,41 @@
 
                 <div class="input-container">
                     <span class="ui-float-label">
-                        <p:inputText id="nome" value="" required="true" />
+                        <p:inputText id="nome" value="#{pessoaController.pessoa.nome}" required="true" />
                         <p:outputLabel for="@previous" value="Nome:" />
                     </span>
                 </div>
 
                 <div class="input-container">
                     <span class="ui-float-label">
-                        <p:inputText id="cpf" value="" required="true" />
+                        <p:inputText id="cpf" value="#{pessoaController.pessoa.cpf}" required="true" />
                         <p:outputLabel for="@previous" value="Cpf:" />
                     </span>
                 </div>
 
                 <div class="input-container">
                     <span class="ui-float-label">
-                        <p:inputText id="telefone" value="" required="true" />
+                        <p:inputText id="telefone" value="#{pessoaController.pessoa.telefone}" required="true" />
                         <p:outputLabel for="@previous" value="Telefone:" />
                     </span>
                 </div>
 
                 <div class="input-container">
                     <span class="ui-float-label">
-                        <p:inputText id="login" value="" required="true" />
+                        <p:inputText id="login" value="#{pessoaController.pessoa.login}" required="true" />
                         <p:outputLabel for="@previous" value="Login:" />
                     </span>
                 </div>
 
                 <div class="input-container">
                     <span class="ui-float-label">
-                        <p:password id="senha" value="" toggleMask="true" redisplay="true"/>
+                        <p:password id="senha" value="#{pessoaController.pessoa.senha}" toggleMask="true" redisplay="true"/>
                         <p:outputLabel for="@previous" value="Senha" />
                     </span>
                 </div>
 
-                <p:commandButton class="cadastrar" value="Cadastrar" update="@form" />
+                <p:commandButton class="cadastrar" value="Cadastrar" update="all growl"
+                                 action="#{pessoaController.cadastro()}"/>
             </h:form>
 
         </div>

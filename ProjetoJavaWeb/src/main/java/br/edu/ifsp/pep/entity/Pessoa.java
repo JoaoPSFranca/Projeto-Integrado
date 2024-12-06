@@ -13,14 +13,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "pessoa")
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorValue(value = "PESSOA_CLIENTE")
-@DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
+@NamedQueries({
+        @NamedQuery(name = "Pessoa.autenticar", query = "SELECT p FROM Pessoa p WHERE p.login = :login AND p.senha = :senha")
+})
 public class Pessoa implements Serializable {
     
     @Id
