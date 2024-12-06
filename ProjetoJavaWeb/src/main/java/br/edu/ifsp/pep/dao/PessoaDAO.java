@@ -5,6 +5,7 @@ import br.edu.ifsp.pep.enuns.NivelAcesso;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
+import java.util.List;
 
 @Stateless
 public class PessoaDAO extends AbstractDAO<Pessoa> {
@@ -21,6 +22,11 @@ public class PessoaDAO extends AbstractDAO<Pessoa> {
         } catch (NoResultException e) {
             return null;
         }
+    }
+    
+    public List<Pessoa> buscarTodas(){
+        return em.createNamedQuery("Pessoa.buscarTodas", Pessoa.class)
+                .getResultList();  
     }
     
 }

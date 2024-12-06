@@ -2,6 +2,7 @@ package br.edu.ifsp.pep.controller;
 
 import br.edu.ifsp.pep.dao.PessoaDAO;
 import br.edu.ifsp.pep.entity.Pessoa;
+import br.edu.ifsp.pep.enuns.NivelAcesso;
 import br.edu.ifsp.pep.util.Mensagem;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
@@ -20,10 +21,11 @@ public class LoginController implements Serializable{
     
     private Pessoa pessoaAutenticada;
     
+    
     public String desconnect(){
         this.pessoaAutenticada = null;
         Mensagem.sucesso("Desconectado !!");
-        return "/indedx.xhtml";
+        return "/index.xhtml";
     }
     
     public String autenticar (){
@@ -31,6 +33,12 @@ public class LoginController implements Serializable{
         
         if (this.pessoaAutenticada != null) {
             Mensagem.sucesso("Logado com Sucesso!!");
+            if (this.pessoaAutenticada.getNivelAcesso() == NivelAcesso.Administrador) {
+                return "/index-administrador";
+            }
+            else if(this.pessoaAutenticada.getNivelAcesso() == NivelAcesso.Funcionario){
+                return "/index-funcionario.xhtml";
+            }
             return "/index.xhtml";
         }
         else{

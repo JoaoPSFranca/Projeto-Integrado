@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      template="/WEB-INF/template-administrador.xhtml">
+    
+    <ui:define name="style">
+        <h:outputStylesheet name="/css/index.css" />
+    </ui:define>
+    
+    <ui:define name="content">
+        <h:form id="formGeral">
+            <ui:repeat value="" var="">
+                <div class="product-card">
+                    <div class="product-image">
+                        <p:outputLabel value="Produto" />
+                    </div>
+
+                    <div class="product-details">
+                        <div style="display: flex">
+                            <p:outputLabel value="Hamburguer" class="output" />
+                            <p:outputLabel value="R$ 20,00" class="output output-preco"/>
+                        </div>
+
+                        <p:outputLabel value="" class="description"/>
+                    </div>
+
+                    <div class="product-quantity-controls">
+                        <p:commandButton value="+" class="btn btn-circle" />
+                        <p:commandButton value="-" class="btn btn-circle" />
+                        <p:outputLabel value="0" styleClass="quantity-label" />
+                    </div>
+                </div>
+            </ui:repeat>
+            
+            <div class="dark sacola">
+                <p:outputLabel value="Preco" class="output output-sacola"/>
+                <p:outputLabel value="Quant" class="output output-sacola"/>
+                <p:commandButton value="Ver Sacola" class="btn btn-inverter" style="margin: 0px;"/>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
